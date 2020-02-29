@@ -6,6 +6,10 @@
 
 안드로이드 폰에서 동일한 공유기에 연결된 PC의 곰플레이어 및 마우스 기능을 컨트롤 할 수 있습니다.
 
+서버 프로그램 다운로드 
+- 원본 URL : (https://raw.github.com/htchoi84/Remote-Mouse-Server/master/PC_Control_Server_install_ver1.2.exe)
+- 단축 URL : (https://muz.so/aav3)
+
 
 
 
