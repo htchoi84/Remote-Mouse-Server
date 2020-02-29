@@ -2,13 +2,13 @@
 
 안드로이드 앱을 다운로드 후 윈도우용 Server Application을 설치하세요. 
 
-## 연관 안드로이드 앱
+## Android App
 - 곰플 리모컨(https://play.google.com/store/apps/details?id=com.htchoi.remocon)
 - Remote Mouse(https://play.google.com/store/apps/details?id=com.htchoi.remote_mouse)
 
 
 
-## 서버 프로그램 다운로드 
+## Server Program(Windows)
 - 원본 URL : (https://raw.github.com/htchoi84/Remote-Mouse-Server/master/PC_Control_Server_install_ver1.2.exe)
 - 단축 URL : (https://muz.so/aav3)
 
