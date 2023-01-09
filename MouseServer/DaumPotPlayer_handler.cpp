@@ -41,8 +41,8 @@ BOOL CALLBACK EnumWindowsProc_Daumplayer(HWND hwnd,LPARAM lParam)
 void DaumPotPlayer_handler::DaumPotPlayerCMD_Parsing(RXCMD RX_Data) 
 {
 	DaumPotPlayer_RX = RX_Data;
-	TRACE("다음 팟플레이어CMD_Parsing DaumPotPlayer_RX.subCMD : %d \n",DaumPotPlayer_RX.subCMD);
-	TRACE("다음 팟플레이어CMD_Parsing DaumPotPlayer_RX.action : %d \n",DaumPotPlayer_RX.action);
+	TRACE("팟플레이어CMD_Parsing DaumPotPlayer_RX.subCMD : %d \n",DaumPotPlayer_RX.subCMD);
+	TRACE("팟플레이어CMD_Parsing DaumPotPlayer_RX.action : %d \n",DaumPotPlayer_RX.action);
 
 	if(DaumPotPlayer_RX.action == POWER_ACTION)
 	{
@@ -140,15 +140,15 @@ void DaumPotPlayer_handler::POWERCMD_handler()
 
 	HWND hwnd = FindWindow("PotPlayer", NULL);   //현재 실행되어있는 app중에 PotPlayer의 classname을 찾아서 윈도우 핸들 반환
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); //현재 실행되어있는 app중에 다음 팟플레이어의 caption을 찾아서 윈도우 핸들 반환
+		hwnd = FindWindow(NULL, "팟플레이어"); //현재 실행되어있는 app중에 팟플레이어의 caption을 찾아서 윈도우 핸들 반환
 
-	if(hwnd == NULL)  //다음 팟플레이어가 실행되지 않은 상태 
+	if(hwnd == NULL)  //팟플레이어가 실행되지 않은 상태 
 	{
 		TRACE("DaumPotPlayer Start");
 		char buff[MAX_PATH + 1];
 		SHGetSpecialFolderPath(NULL,buff,CSIDL_PROGRAM_FILES, 0);  //program files의 경로를 얻음 
 		CString CMD_str = buff;
-		CMD_str = CMD_str + "\\Daum\\PotPlayer\\PotPlayerMini.exe";
+		CMD_str = CMD_str + "\\Daum\\PotPlayer\\PotPlayer.exe";
 
 		TRACE("DaumPotPlayer 경로 : %s \n",CMD_str);
 
@@ -176,11 +176,11 @@ void DaumPotPlayer_handler::PLAYCMD_handler()
 {
 	HWND hwnd = FindWindow("PotPlayer", NULL);   //현재 실행되어있는 app중에 PotPlayer의 classname을 찾아서 윈도우 핸들 반환
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); //현재 실행되어있는 app중에 다음 팟플레이어의 caption을 찾아서 윈도우 핸들 반환
+		hwnd = FindWindow(NULL, "팟플레이어"); //현재 실행되어있는 app중에 팟플레이어의 caption을 찾아서 윈도우 핸들 반환
 
 	if(hwnd == NULL)
 	{
-		//AfxMessageBox("다음 팟플레이어를 찾을 수 없습니다.\n 다음 팟플레이어 실행하세요.");
+		//AfxMessageBox("팟플레이어를 찾을 수 없습니다.\n 다음 팟플레이어 실행하세요.");
 		return;
 	}
 
@@ -238,7 +238,7 @@ void DaumPotPlayer_handler::PLAYCMD_handler()
 void DaumPotPlayer_handler::OKCMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -272,7 +272,7 @@ void DaumPotPlayer_handler::OKCMD_handler(){
 void DaumPotPlayer_handler::UPCMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -305,7 +305,7 @@ void DaumPotPlayer_handler::UPCMD_handler(){
 void DaumPotPlayer_handler::DOWNCMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -339,7 +339,7 @@ void DaumPotPlayer_handler::DOWNCMD_handler(){
 void DaumPotPlayer_handler::RIGHTCMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -374,7 +374,7 @@ void DaumPotPlayer_handler::RIGHTCMD_handler(){
 void DaumPotPlayer_handler::LEFTCMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -407,7 +407,7 @@ void DaumPotPlayer_handler::LEFTCMD_handler(){
 void DaumPotPlayer_handler::STOPCMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -439,7 +439,7 @@ void DaumPotPlayer_handler::STOPCMD_handler(){
 void DaumPotPlayer_handler::FFCMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -473,7 +473,7 @@ void DaumPotPlayer_handler::FFCMD_handler(){
 void DaumPotPlayer_handler::RWCMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -507,7 +507,7 @@ void DaumPotPlayer_handler::RWCMD_handler(){
 void DaumPotPlayer_handler::VOLUMEUP_CMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -529,7 +529,7 @@ void DaumPotPlayer_handler::VOLUMEUP_CMD_handler(){
 void DaumPotPlayer_handler::VOLUMEDOWN_CMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -552,7 +552,7 @@ void DaumPotPlayer_handler::OPENCMD_handler(){
 
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -598,7 +598,7 @@ void DaumPotPlayer_handler::OPENCMD_handler(){
 void DaumPotPlayer_handler::MUTECMD_handler(){
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -631,7 +631,7 @@ void DaumPotPlayer_handler::CANCELCMD_handler(){
 
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{
@@ -664,7 +664,7 @@ void DaumPotPlayer_handler::TABCMD_handler()
 
 	HWND hwnd = FindWindow("PotPlayer", NULL);   
 	if(hwnd == NULL)
-		hwnd = FindWindow(NULL, "다음 팟플레이어"); 
+		hwnd = FindWindow(NULL, "팟플레이어"); 
 
 	if(hwnd == NULL)
 	{

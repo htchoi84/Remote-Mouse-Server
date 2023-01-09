@@ -42,7 +42,7 @@ CMouseServerApp theApp;
 BOOL CMouseServerApp::InitInstance()
 {
 	CWnd* pWnd = NULL;
-	pWnd = CWnd::FindWindow(NULL, _T("PC control Server (for Android)"));
+	pWnd = CWnd::FindWindow(NULL, _T("PC Control Server"));
 	if(pWnd)       // 중복 실행이 되었을 경우에는 재실행하지않고 리턴한다.
 	{
 		// 중복 실행 중인 프로그램 화면에 표시하는 코드
