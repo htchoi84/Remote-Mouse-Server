@@ -3,7 +3,7 @@
 안드로이드 앱을 다운로드 후 윈도우용 Server Application을 설치하세요. 
 
 ## Android App
-- 팟플레이어 리모컨
+- 팟플레이어 리모컨(https://play.google.com/store/apps/details?id=com.htchoi.potplayerremote)
 - 곰플 리모컨(https://play.google.com/store/apps/details?id=com.htchoi.remocon)
 - Remote Mouse(https://play.google.com/store/apps/details?id=com.htchoi.remote_mouse)
 
