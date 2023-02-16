@@ -94,7 +94,7 @@ BEGIN_MESSAGE_MAP(CMouseServerDlg, CDialog)
 	ON_COMMAND(ID_TRAY_MENUITEM_SHOWDLG, OnTrayMenuitemShowdlg)  //트레이아이콘 팝업에서 열기 항목 선택
 	ON_COMMAND(ID_TRAY_MENUITEM_ABOUT, OnTrayMenuitemAbout)  
 	ON_COMMAND(ID_TRAY_MENUITEM_EXIT, OnTrayMenuitemexit)   // 트레이 아이콘 종료 항목 선택
-	ON_COMMAND(ID_TRAY_MENUITEM_AUTORUN, OnTrayMenuitemAutorun)  //트레이 아이콘 윈도우 시작시 실행 항목 선택시
+	//ON_COMMAND(ID_TRAY_MENUITEM_AUTORUN, OnTrayMenuitemAutorun)  //트레이 아이콘 윈도우 시작시 실행 항목 선택시
 	ON_REGISTERED_MESSAGE(g_uRestartTb, OnRestartTraybar)   //explorer프로세스가 시작될때 호출LRESULT CTrayTest01Dlg::OnRestartTraybar(WPARAM wParam, LPARAM lParam) 
 	ON_WM_WINDOWPOSCHANGING()
 END_MESSAGE_MAP()
@@ -158,8 +158,10 @@ BOOL CMouseServerDlg::OnInitDialog()
 	m_bIsTrayIcon = FALSE;
 	RegistTrayIcon();   //트레이 아이콘 등록
 
-	if (m_Animation.Load(MAKEINTRESOURCE(IDR_ANIMATION),_T("GIF")))
-		m_Animation.Draw();
+	//if (m_Animation.Load(MAKEINTRESOURCE(IDR_ANIMATION),_T("GIF")))
+	//	m_Animation.Draw();
+
+	remote_image.Load(".\\res\\remote.png");
 
 	IP_Addr_Str = get_IP_Adress();
 	Create_StatusBar();  //StatusBar 생성후 IP 출력 
@@ -200,9 +202,11 @@ void CMouseServerDlg::OnSysCommand(UINT nID, LPARAM lParam)
 
 void CMouseServerDlg::OnPaint() 
 {
+	CPaintDC dc(this); // device context for painting
+
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // device context for painting
+		//CPaintDC dc(this); // device context for painting
 
 		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
 
@@ -218,7 +222,11 @@ void CMouseServerDlg::OnPaint()
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
-	{	
+	{
+		//CRect rect;      GetClientRect(rect);
+		//int x = (rect.right - remote_image.GetWidth()) / 2;
+		//int y = (rect.bottom - remote_image.GetHeight()) / 2;
+		//remote_image.Draw(dc, x, y, remote_image.GetWidth(), remote_image.GetHeight());
 		CDialog::OnPaint();
 	}
 
@@ -512,6 +520,7 @@ LRESULT CMouseServerDlg::TrayIconMsg(WPARAM wParam, LPARAM lParam)
 	{
 	case WM_LBUTTONDBLCLK:   // 트레이아이콘 왼쪽버튼 더블클릭시 창이 다시 열린다.
 		{ 
+			::SetForegroundWindow((AfxGetMainWnd()->GetSafeHwnd()) ? (AfxGetMainWnd()->GetSafeHwnd()) : (m_hWnd)); //parent window
 			ShowWindowEx(SW_SHOWNORMAL);
 			//ShowWindowEx(SW_SHOW);
 		}
@@ -547,8 +556,12 @@ LRESULT CMouseServerDlg::TrayIconMsg(WPARAM wParam, LPARAM lParam)
 				}
 			}
 
+			::SetForegroundWindow((AfxGetMainWnd()->GetSafeHwnd()) ? (AfxGetMainWnd()->GetSafeHwnd()) : (m_hWnd)); //parent window
+
 			pMenu->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON,
 				ptMouse.x, ptMouse.y, AfxGetMainWnd());
+
+			::SetForegroundWindow((AfxGetMainWnd()->GetSafeHwnd()) ? (AfxGetMainWnd()->GetSafeHwnd()) : (m_hWnd)); //parent window
 		}
 		break;
 	}

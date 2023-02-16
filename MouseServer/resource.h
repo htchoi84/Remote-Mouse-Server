@@ -18,6 +18,8 @@
 #define IDI_HOST                        152
 #define IDR_MENU1                       153
 #define IDR_MENU_TRAYPOPUP              153
+#define IDB_PNG3                        156
+#define IDB_PNG2                        158
 #define ID_STATUSBAR1                   200
 #define ID_STATUSBAR2                   201
 #define IDC_EDIT1                       1000
@@ -42,7 +44,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        155
+#define _APS_NEXT_RESOURCE_VALUE        159
 #define _APS_NEXT_COMMAND_VALUE         32779
 #define _APS_NEXT_CONTROL_VALUE         1011
 #define _APS_NEXT_SYMED_VALUE           103

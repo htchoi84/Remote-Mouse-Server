@@ -19,6 +19,7 @@
 #include "RXCMD.h"
 #include "PictureEx.h"	// Added by ClassView
 #include "afxwin.h"
+#include <atlimage.h>
 
 #define  WM_TRAYICON_MSG WM_USER + 1001
 
@@ -34,6 +35,7 @@ protected:
 	bool m_bIsTrayIcon;
 	bool m_bShowFlag;
 public:
+	CImage remote_image;
 	CPictureEx m_Animation;
 	CPictureEx Picture_Android;
 	WSADATA wsaData;

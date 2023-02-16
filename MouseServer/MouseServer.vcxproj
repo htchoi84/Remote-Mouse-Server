@@ -196,6 +196,9 @@
     <None Include="res\loading2.gif" />
     <None Include="res\notebook.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\remote.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
