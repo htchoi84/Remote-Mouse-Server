@@ -9,9 +9,8 @@
 - Remote Mouse(https://play.google.com/store/apps/details?id=com.htchoi.remote_mouse)
 
 
-
 ## Server Program(Windows)
-- 원본 URL : (https://github.com/htchoi84/Remote-Mouse-Server/raw/master/PC_Control_Server.exe)
+- 원본 URL : (https://github.com/htchoi84/Remote-Mouse-Server/raw/master/PC%20Control%20Server.exe)
 
 
 
