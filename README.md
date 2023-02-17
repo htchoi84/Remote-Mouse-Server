@@ -11,8 +11,7 @@
 
 
 ## Server Program(Windows)
-- 원본 URL : (https://raw.github.com/htchoi84/Remote-Mouse-Server/master/PC_Control_Server.exe)
-- 단축 URL : (https://url.kr/laideh)
+- 원본 URL : (https://github.com/htchoi84/Remote-Mouse-Server/raw/master/PC_Control_Server.exe)
 
 
 
